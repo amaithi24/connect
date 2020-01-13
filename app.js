@@ -26,8 +26,8 @@ MongoClient.connect(url, function(err, db) {
 app.get('/', (req, res) => {
     dbo.collection("families").findOne({}, function(err, result) {
         if (err) throw err;
-        console.log(result);
-        res.send(result)
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.end('Hello World!jjjjj');
         //db.closeConnection();
       });
 });
